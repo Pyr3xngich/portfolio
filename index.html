@@ -326,6 +326,7 @@
                             </div>
                             <div class="copyright">
                                 <p>&copy; 2023 Rodney. All Rights Reserved.</p>
+                                <p>Today's date: <span id="current-date"></span></p>
                             </div>
                         </div>
                     </footer>
@@ -356,6 +357,17 @@
                             alert('Thank you for your message! I will get back to you soon.');
                             contactForm.reset();
                         });
+                        
+                        // Display current date
+                        function updateCurrentDate() {
+                            const dateElement = document.getElementById('current-date');
+                            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                            const today = new Date();
+                            dateElement.textContent = today.toLocaleDateString('en-US', options);
+                        }
+                        
+                        // Update date when page loads
+                        updateCurrentDate();
                     </script>
 </body>
 </html>                    <a href="#skills">Skills</a>
